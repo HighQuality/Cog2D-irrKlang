@@ -22,12 +22,17 @@ namespace IrrKlangModule
 
         public override ISoundInstance Play()
         {
-            return new IrrKlangSoundInstance(this, true);
+            return new IrrKlangSoundInstance(this, true, false);
+        }
+
+        public override ISoundInstance Loop()
+        {
+            return new IrrKlangSoundInstance(this, true, true);
         }
 
         public override ISoundInstance CreateInstance()
         {
-            return new IrrKlangSoundInstance(this, false);
+            return new IrrKlangSoundInstance(this, false, false);
         }
 
         ~IrrKlangSoundEffect()
